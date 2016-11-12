@@ -5,3 +5,7 @@
 **/obj/Release/
 **/bin/Release/
 .vs
+
+# NuGet
+#######
+packages
