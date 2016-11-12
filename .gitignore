@@ -9,3 +9,4 @@
 # NuGet
 #######
 packages
+*.nupkg
