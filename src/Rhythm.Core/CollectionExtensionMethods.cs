@@ -32,6 +32,23 @@
                 : items;
         }
 
+        /// <summary>
+        /// Returns the collection of items without any nulls.
+        /// </summary>
+        /// <typeparam name="T">
+        /// The type of item stored by the collection.
+        /// </typeparam>
+        /// <param name="items">
+        /// The collection of items.
+        /// </param>
+        /// <returns>
+        /// The collection without null  items.
+        /// </returns>
+        public static IEnumerable<T> WithoutNulls<T>(this IEnumerable<T> items)
+        {
+            return items.Where(x => x != null);
+        }
+
         #endregion
 
     }
