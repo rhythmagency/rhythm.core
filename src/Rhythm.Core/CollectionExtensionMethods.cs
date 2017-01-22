@@ -49,6 +49,26 @@
             return items.Where(x => x != null);
         }
 
+        /// <summary>
+        /// Generates a sequence that conains the specified value the specified number of times.
+        /// </summary>
+        /// <typeparam name="T">
+        /// The type of the value to be repeated in the result sequence.
+        /// </typeparam>
+        /// <param name="element">
+        /// The value to be repeated.
+        /// </param>
+        /// <param name="count">
+        /// The number of times to repeat the value in the generated sequence.
+        /// </param>
+        /// <returns>
+        /// A collection containing the specified element the specified number of times.
+        /// </returns>
+        public static IEnumerable<T> Repeat<T>(this T element, int count)
+        {
+            return Enumerable.Repeat(element, count);
+        }
+
         #endregion
 
     }
