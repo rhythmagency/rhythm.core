@@ -93,6 +93,8 @@
                     return CleanItems(SplitByLineBreaks(source));
                 case StringSplitDelimiters.Semicolon:
                     return CleanItems(SplitByChars(source, ';'));
+                case StringSplitDelimiters.Tab:
+                    return CleanItems(SplitByChars(source, '\t'));
                 default:
                     return new[] { source };
             }

@@ -25,7 +25,12 @@
         /// <summary>
         /// Split by semicolon.
         /// </summary>
-        Semicolon
+        Semicolon,
+
+        /// <summary>
+        /// Split by tabs.
+        /// </summary>
+        Tab
 
     }
 
