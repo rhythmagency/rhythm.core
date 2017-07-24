@@ -2,6 +2,7 @@
 {
 
     // The namespaces.
+    using System;
     using System.Collections.Generic;
     using System.Linq;
 
@@ -10,6 +11,27 @@
     /// </summary>
     public static class CollectionExtensionMethods
     {
+
+        #region Properties
+
+        /// <summary>
+        /// Used to generate random numbers.
+        /// </summary>
+        private static Random Rnd { get; set; }
+
+        #endregion
+
+        #region Constructors
+
+        /// <summary>
+        /// Static constructor.
+        /// </summary>
+        static CollectionExtensionMethods()
+        {
+            Rnd = new Random();
+        }
+
+        #endregion
 
         #region Extension Methods
 
@@ -42,7 +64,7 @@
         /// The collection of items.
         /// </param>
         /// <returns>
-        /// The collection without null  items.
+        /// The collection without null items.
         /// </returns>
         public static IEnumerable<T> WithoutNulls<T>(this IEnumerable<T> items)
         {
@@ -67,6 +89,34 @@
         public static IEnumerable<T> Repeat<T>(this T element, int count)
         {
             return Enumerable.Repeat(element, count);
+        }
+
+        /// <summary>
+        /// Returns the specified collection of items in random order.
+        /// </summary>
+        /// <typeparam name="T">
+        /// The type of item stored by the collection.
+        /// </typeparam>
+        /// <param name="items">
+        /// The collection of items.
+        /// </param>
+        /// <returns>
+        /// The collection, in random order.
+        /// </returns>
+        public static IEnumerable<T> RandomOrder<T>(this IEnumerable<T> items)
+        {
+            var itemsList = items.MakeSafe().ToList();
+            var randomized = new List<T>();
+            var count = itemsList.Count;
+            for(var i = 0; i < count; i++)
+            {
+                var index = Rnd.Next(itemsList.Count);
+                var item = itemsList[index];
+                randomized.Add(item);
+                itemsList[index] = itemsList.Last();
+                itemsList.RemoveAt(itemsList.Count - 1);
+            }
+            return randomized;
         }
 
         #endregion
