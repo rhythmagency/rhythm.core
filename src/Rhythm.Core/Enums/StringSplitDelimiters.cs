@@ -30,7 +30,12 @@
         /// <summary>
         /// Split by tabs.
         /// </summary>
-        Tab
+        Tab,
+
+        /// <summary>
+        /// Split by equals signs.
+        /// </summary>
+        Equals
 
     }
 
