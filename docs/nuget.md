@@ -1,7 +1,7 @@
 If you are an owner of the NuGet package, you can deploy to NuGet with a command that looks like this:
 
 ```text
-nuget push Rhythm.Core.1.0.1.0.nupkg some-long-guid-here -Source https://www.nuget.org/api/v2/package
+nuget push Rhythm.Core.1.4.0.nupkg your-nuget-key-here -Source https://www.nuget.org/api/v2/package
 ```
 
 Just replace the version number in the filename and the GUID (it's your API key you see when you log into your NuGet.org account).
