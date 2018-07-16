@@ -119,6 +119,35 @@
             return randomized;
         }
 
+        /// <summary>
+        /// Returns a list for the specified collection. Attempts to return the
+        /// underlying collection if it is already a list; otherwise, it converts
+        /// the collection to a list.
+        /// </summary>
+        /// <typeparam name="T">
+        /// The type of item stored by the collection.
+        /// </typeparam>
+        /// <param name="items">
+        /// The collection of items.
+        /// </param>
+        /// <returns>
+        /// An empty list, if the supplied collection is null; otherwise, the
+        /// supplied collection as a list.
+        /// </returns>
+        /// <remarks>
+        /// This will never return a null (i.e., it will return an empty list
+        /// rather than a null).
+        /// </remarks>
+        public static List<T> AsList<T>(this IEnumerable<T> items)
+        {
+            var list = items as List<T>;
+            if (list == null)
+            {
+                list = items.MakeSafe().ToList();
+            }
+            return list;
+        }
+
         #endregion
 
     }

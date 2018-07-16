@@ -14,7 +14,9 @@ Install with NuGet. Search for "Rhythm.Core".
 
 Collection extension methods:
 
+* **AsList** Returns the supplied collection as a list. Differs from ToList in that it will return the original collection if it is already a list, and it will never return null.
 * **MakeSafe** Returns a non-null version of the collection.
+* **RandomOrder** Returns a collection with the elements of the supplied collection in a random order.
 * **Repeat** Creates a collection of the specified size with each element containing the same item.
 * **WithoutNulls** Returns the collection without null items.
 
