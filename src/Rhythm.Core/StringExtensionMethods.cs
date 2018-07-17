@@ -137,7 +137,10 @@
             {
                 return null;
             }
-            return InvalidCssChars.Replace(source, CssReplace).ToSnakeCase();
+            return InvalidCssChars
+                .Replace(source, CssReplace)
+                .ToSnakeCase()
+                .Trim(CssReplace.ToCharArray());
         }
 
         #endregion
