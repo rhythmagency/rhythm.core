@@ -50,7 +50,7 @@
             var options = RegexOptions.Compiled | RegexOptions.Singleline | RegexOptions.IgnoreCase;
             var options2 = RegexOptions.Compiled | RegexOptions.Singleline;
             LineRegex = new Regex(@"((?!\r|\n).)+", options);
-            SlugInsertionPointRegex = new Regex(@"(?<EDGE>(?<![A-Z]+|-|^)[A-Z]+", options2);
+            SlugInsertionPointRegex = new Regex(@"(?<EDGE>(?<![A-Z]+|-|^)[A-Z]+)", options2);
             InvalidCssChars = new Regex(@"((?![a-z0-9]).)+", options);
         }
 
