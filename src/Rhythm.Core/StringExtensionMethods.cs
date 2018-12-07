@@ -143,6 +143,27 @@
                 .Trim(CssReplace.ToCharArray());
         }
 
+        /// <summary>
+        /// Returns either the supplied string or null (in the case that the string is empty
+        /// or whitespace).
+        /// </summary>
+        /// <param name="source">
+        /// The string to return.
+        /// </param>
+        /// <returns>
+        /// The specified string, or null.
+        /// </returns>
+        /// <remarks>
+        /// Useful when you want to use the null-coalescing operator and you want to treat an
+        /// empty or whitespace string as if it were null.
+        /// </remarks>
+        public static string PreferNull(this string source)
+        {
+            return string.IsNullOrWhiteSpace(source)
+                ? null
+                : source;
+        }
+
         #endregion
 
         #region Private Methods
