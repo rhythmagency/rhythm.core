@@ -23,10 +23,16 @@
         #region Properties
 
         /// <summary>
-        /// This regular expression matches the substrings that should have a dash inserted
+        /// This regular expression matches the substrings that should have a dash inserted.
         /// before them.
         /// </summary>
         private static Regex SlugInsertionPointRegex { get; set; }
+
+        /// <summary>
+        /// This regular expression matches the a hyphen followed by any character.
+        /// before them.
+        /// </summary>
+        private static Regex DashAndCharRegex { get; set; }
 
         /// <summary>
         /// This regular expression matches a line (i.e., everything except for line breaks).
@@ -51,6 +57,7 @@
             var options2 = RegexOptions.Compiled | RegexOptions.Singleline;
             LineRegex = new Regex(@"((?!\r|\n).)+", options);
             SlugInsertionPointRegex = new Regex(@"(?<EDGE>(?<![A-Z]+|-|^)[A-Z]+)", options2);
+            DashAndCharRegex = new Regex("-(?<CHAR>.)", options);
             InvalidCssChars = new Regex(@"((?![a-z0-9]).)+", options);
         }
 
@@ -119,6 +126,46 @@
                 return null;
             }
             return SlugInsertionPointRegex.Replace(source, SnakeCaseReplace).ToLower();
+        }
+
+        /// <summary>
+        /// Converts a snake case string to camel case (e.g., converts "this-thing" to "thisThing").
+        /// </summary>
+        /// <param name="source">
+        /// The snake case string to convert.
+        /// </param>
+        /// <returns>
+        /// The camel case string.
+        /// </returns>
+        public static string ToCamelCase(this string source)
+        {
+            if (string.IsNullOrWhiteSpace(source))
+            {
+                return null;
+            }
+            return DashAndCharRegex.Replace(source, x =>
+            {
+                return x.Groups["CHAR"].Value.ToUpper();
+            });
+        }
+
+        /// <summary>
+        /// Converts a snake case string to pascal case (e.g., converts "this-thing" to "ThisThing").
+        /// </summary>
+        /// <param name="source">
+        /// The snake case string to convert.
+        /// </param>
+        /// <returns>
+        /// The pascal case string.
+        /// </returns>
+        public static string ToPascalCase(this string source)
+        {
+            if (string.IsNullOrWhiteSpace(source))
+            {
+                return null;
+            }
+            var camelCase = ToCamelCase(source);
+            return camelCase.Substring(0, 1).ToUpper() + camelCase.Substring(1);
         }
 
         /// <summary>
