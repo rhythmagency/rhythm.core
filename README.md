@@ -24,6 +24,8 @@ String extension methods:
 
 * **SplitBy** Splits a string by the specified delimiters.
 * **ToSnakeCase** Converts a camel case string to snake case.
+* **ToCamelCase** Converts a snake case string to camel case.
+* **ToPascalCase** Converts a snake case string to pascal case.
 * **SanitizeForCss** Converts a string for use as a CSS class.
 
 # Maintainers
