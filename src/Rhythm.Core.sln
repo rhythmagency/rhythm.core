@@ -1,11 +1,11 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rhythm.Core", "Rhythm.Core\Rhythm.Core.csproj", "{097C9606-6372-494C-9194-86757DBDD534}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rhythm.Core", "Rhythm.Core\Rhythm.Core.csproj", "{097C9606-6372-494C-9194-86757DBDD534}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{F1B313B8-5641-491A-8218-6782A3060125}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{F1B313B8-5641-491A-8218-6782A3060125}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
