@@ -35,8 +35,12 @@
         /// <summary>
         /// Split by equals signs.
         /// </summary>
-        Equals
+        Equals,
 
+        /// <summary>
+        /// Split by \.
+        /// </summary>
+        BackSlash,
     }
 
 }

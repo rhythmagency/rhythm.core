@@ -104,6 +104,8 @@
                     return CleanItems(SplitByChars(source, '\t'));
                 case StringSplitDelimiters.Equals:
                     return CleanItems(SplitByChars(source, '='));
+                case StringSplitDelimiters.BackSlash:
+                    return CleanItems(SplitByChars(source, '\\'));
                 default:
                     return new[] { source };
             }
