@@ -8,7 +8,7 @@ using Rhythm.Core;
 /// Tests for string extension methods.
 /// </summary>
 [TestClass]
-public class StringTests
+public sealed class StringTests
 {
 
     #region Test Methods
