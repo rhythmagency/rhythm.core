@@ -1,7 +1,5 @@
 ﻿namespace Rhythm.Core;
 
-
-// The namespaces.
 using System;
 using System.Collections.Generic;
 using System.Linq;
