@@ -41,6 +41,11 @@
         /// Split by \.
         /// </summary>
         BackSlash,
+
+        /// <summary>
+        /// Split by /.
+        /// </summary>
+        ForwardSlash,
     }
 
 }
