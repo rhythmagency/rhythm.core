@@ -7,7 +7,6 @@
     <PackageProjectUrl>https://github.com/rhythmagency/rhythm.core</PackageProjectUrl>
     <RepositoryUrl>https://github.com/rhythmagency/rhythm.core</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageOutputPath>..\..\dist</PackageOutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DocumentationFile>bin\Debug\Rhythm.Core.XML</DocumentationFile>
