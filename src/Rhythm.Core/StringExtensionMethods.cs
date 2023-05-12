@@ -269,5 +269,4 @@ public static class StringExtensionMethods
     }
 
     #endregion
-
 }
