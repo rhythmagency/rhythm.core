@@ -47,9 +47,7 @@ public static class CollectionExtensionMethods
     /// </returns>
     public static IEnumerable<T> MakeSafe<T>(this IEnumerable<T> items)
     {
-        return items == null
-            ? Enumerable.Empty<T>()
-            : items;
+        return items ?? Enumerable.Empty<T>();
     }
 
     /// <summary>
