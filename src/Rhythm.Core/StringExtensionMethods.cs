@@ -1,6 +1,7 @@
 ﻿namespace Rhythm.Core;
 
 using Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -167,7 +168,7 @@ public static class StringExtensionMethods
             return null;
         }
         var camelCase = ToCamelCase(source);
-        return camelCase.Substring(0, 1).ToUpper() + camelCase.Substring(1);
+        return string.Concat(camelCase[..1].ToUpper(), camelCase.AsSpan(1));
     }
 
     /// <summary>
