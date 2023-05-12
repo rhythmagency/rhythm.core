@@ -1,6 +1,5 @@
 ﻿namespace Tests;
 
-// Namespaces.
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Rhythm.Core;
 
