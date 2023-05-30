@@ -28,10 +28,12 @@
         /// Test if pascal case works.
         /// </summary>
         [TestMethod]
-        public void PascalCase()
+        [DataRow("hello-world-test", "helloWorldTest")]
+        [DataRow("HelloWorldTest", "helloWorldTest")]
+        public void CamelCase(string input, string expected)
         {
-            var result = "hello-world-test".ToPascalCase();
-            Assert.AreEqual("HelloWorldTest", result);
+            var result = input.ToCamelCase();
+            Assert.AreEqual(expected, result);
         }
 
         /// <summary>
