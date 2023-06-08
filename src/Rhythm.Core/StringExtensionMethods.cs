@@ -133,10 +133,10 @@
         }
 
         /// <summary>
-        /// Converts a snake case string to camel case (e.g., converts "this-thing" to "thisThing").
+        /// Converts a string to camel case (e.g., converts "this-thing" to "thisThing").
         /// </summary>
         /// <param name="source">
-        /// The snake case string to convert.
+        /// The string to convert.
         /// </param>
         /// <returns>
         /// The camel case string.
@@ -147,10 +147,18 @@
             {
                 return null;
             }
-            return DashAndCharRegex.Replace(source, x =>
+
+            var camelCase = DashAndCharRegex.Replace(source, x =>
             {
                 return x.Groups["CHAR"].Value.ToUpper();
             });
+
+            if (!string.IsNullOrEmpty(camelCase) && camelCase.Length > 1)
+            {
+                return char.ToLowerInvariant(camelCase[0]) + camelCase.Substring(1);
+            }
+
+            return camelCase.ToLowerInvariant();
         }
 
         /// <summary>

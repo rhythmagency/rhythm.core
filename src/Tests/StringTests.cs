@@ -18,12 +18,14 @@
         /// Test if camel case works.
         /// </summary>
         [TestMethod]
-        public void CamelCase()
+        [DataRow("hello-world-test", "helloWorldTest")]
+        [DataRow("HelloWorldTest", "helloWorldTest")]
+        [DataRow("A", "a")]
+        public void CamelCase(string input, string expected)
         {
-            var result = "hello-world-test".ToCamelCase();
-            Assert.AreEqual("helloWorldTest", result);
+            var result = input.ToCamelCase();
+            Assert.AreEqual(expected, result);
         }
-
         /// <summary>
         /// Test if pascal case works.
         /// </summary>
