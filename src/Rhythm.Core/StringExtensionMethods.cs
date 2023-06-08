@@ -153,7 +153,12 @@
                 return x.Groups["CHAR"].Value.ToUpper();
             });
 
-            return char.ToLowerInvariant(camelCase[0]) + camelCase.Substring(1);
+            if (!string.IsNullOrEmpty(camelCase) && camelCase.Length > 1)
+            {
+                return char.ToLowerInvariant(camelCase[0]) + camelCase.Substring(1);
+            }
+
+            return camelCase.ToLowerInvariant();
         }
 
         /// <summary>
